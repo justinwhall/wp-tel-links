@@ -17,3 +17,8 @@
  * @since 1.0.0
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+function wp_tel_links_include_script() {
+    wp_enqueue_script( 'newscript', plugins_url( '/wp-tel-links.js' , __FILE__ ), array( 'jquery' ) );
+}
+add_action( 'wp_enqueue_scripts', 'wp_tel_links_include_script' );
